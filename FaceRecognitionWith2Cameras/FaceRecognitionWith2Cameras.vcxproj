@@ -5,9 +5,17 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -27,6 +35,12 @@
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -49,7 +63,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OpenCV_LIB)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(OpenCV_LIBS);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_calib3d$(OpenCVVersion).lib;opencv_calib3d$(OpenCVVersion)d.lib;opencv_contrib$(OpenCVVersion).lib;opencv_contrib$(OpenCVVersion)d.lib;opencv_core$(OpenCVVersion).lib;opencv_core$(OpenCVVersion)d.lib;opencv_features2d$(OpenCVVersion).lib;opencv_features2d$(OpenCVVersion)d.lib;opencv_flann$(OpenCVVersion).lib;opencv_flann$(OpenCVVersion)d.lib;opencv_gpu$(OpenCVVersion).lib;opencv_gpu$(OpenCVVersion)d.lib;opencv_highgui$(OpenCVVersion).lib;opencv_highgui$(OpenCVVersion)d.lib;opencv_imgproc$(OpenCVVersion).lib;opencv_imgproc$(OpenCVVersion)d.lib;opencv_legacy$(OpenCVVersion).lib;opencv_legacy$(OpenCVVersion)d.lib;opencv_ml$(OpenCVVersion).lib;opencv_ml$(OpenCVVersion)d.lib;opencv_nonfree$(OpenCVVersion).lib;opencv_nonfree$(OpenCVVersion)d.lib;opencv_objdetect$(OpenCVVersion).lib;opencv_objdetect$(OpenCVVersion)d.lib;opencv_ocl$(OpenCVVersion).lib;opencv_ocl$(OpenCVVersion)d.lib;opencv_photo$(OpenCVVersion).lib;opencv_photo$(OpenCVVersion)d.lib;opencv_stitching$(OpenCVVersion).lib;opencv_stitching$(OpenCVVersion)d.lib;opencv_superres$(OpenCVVersion).lib;opencv_superres$(OpenCVVersion)d.lib;opencv_ts$(OpenCVVersion).lib;opencv_ts$(OpenCVVersion)d.lib;opencv_video$(OpenCVVersion).lib;opencv_video$(OpenCVVersion)d.lib;opencv_videostab$(OpenCVVersion).lib;opencv_videostab$(OpenCVVersion)d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -66,8 +80,22 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>opencv_calib3d$(OpenCVVersion).lib;opencv_calib3d$(OpenCVVersion)d.lib;opencv_contrib$(OpenCVVersion).lib;opencv_contrib$(OpenCVVersion)d.lib;opencv_core$(OpenCVVersion).lib;opencv_core$(OpenCVVersion)d.lib;opencv_features2d$(OpenCVVersion).lib;opencv_features2d$(OpenCVVersion)d.lib;opencv_flann$(OpenCVVersion).lib;opencv_flann$(OpenCVVersion)d.lib;opencv_gpu$(OpenCVVersion).lib;opencv_gpu$(OpenCVVersion)d.lib;opencv_highgui$(OpenCVVersion).lib;opencv_highgui$(OpenCVVersion)d.lib;opencv_imgproc$(OpenCVVersion).lib;opencv_imgproc$(OpenCVVersion)d.lib;opencv_legacy$(OpenCVVersion).lib;opencv_legacy$(OpenCVVersion)d.lib;opencv_ml$(OpenCVVersion).lib;opencv_ml$(OpenCVVersion)d.lib;opencv_nonfree$(OpenCVVersion).lib;opencv_nonfree$(OpenCVVersion)d.lib;opencv_objdetect$(OpenCVVersion).lib;opencv_objdetect$(OpenCVVersion)d.lib;opencv_ocl$(OpenCVVersion).lib;opencv_ocl$(OpenCVVersion)d.lib;opencv_photo$(OpenCVVersion).lib;opencv_photo$(OpenCVVersion)d.lib;opencv_stitching$(OpenCVVersion).lib;opencv_stitching$(OpenCVVersion)d.lib;opencv_superres$(OpenCVVersion).lib;opencv_superres$(OpenCVVersion)d.lib;opencv_ts$(OpenCVVersion).lib;opencv_ts$(OpenCVVersion)d.lib;opencv_video$(OpenCVVersion).lib;opencv_video$(OpenCVVersion)d.lib;opencv_videostab$(OpenCVVersion).lib;opencv_videostab$(OpenCVVersion)d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OpenCV_LIB)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OpenCV_INC)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Wildlife.wmv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
