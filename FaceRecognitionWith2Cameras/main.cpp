@@ -1,9 +1,9 @@
+#include "config.h"
 #include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
-#define CAM_NUM 2
 
 int main(int argc, char *argv[]) {
 	cv::VideoCapture *vc = new cv::VideoCapture[CAM_NUM];

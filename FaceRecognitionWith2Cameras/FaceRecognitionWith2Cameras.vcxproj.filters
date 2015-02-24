@@ -24,4 +24,9 @@
       <Filter>リソース ファイル</Filter>
     </Media>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="config.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
