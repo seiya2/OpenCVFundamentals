@@ -51,6 +51,5 @@ int main(int argc, char *argv[]) {
 		if(cv::waitKey(1) == ' ') break;
 	}
 
-
 	return 0;
 }
